@@ -5,12 +5,14 @@ const clear = require('clear');
 const figlet = require('figlet');
 const fetch = require('node-fetch')
 
+const api = 'https://jenny-api.herokuapp.com/data';
+
 clear()
 
-fetch("https://ada-api.herokuapp.com/api/quotes")
+fetch(api)
 	.then(data => data.json())
 	.then(data => {
-		const arr = data.quotesData
+		const arr = data.quotes
 		const max = arr.length
 		const index = Math.floor(Math.random() * max)
 		return arr[index]
@@ -27,7 +29,7 @@ fetch("https://ada-api.herokuapp.com/api/quotes")
 	})
 	.catch(error => {
 		console.log("We are sorry. There seems to be a problem with our service!")	
-		console.log("Error: ", error.json())
-	});
+		console.log("Error: ", error)
+	})
 
 clear()
