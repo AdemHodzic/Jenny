@@ -25,10 +25,10 @@ fetch(api)
 		  )
 		);
 		console.log(chalk.magenta.bold("",data));
-			
+
 	})
 	.catch(error => {
-		console.log("We are sorry. There seems to be a problem with our service!")	
+		console.log("We are sorry. There seems to be a problem with our service!")
 		console.log("Error: ", error)
 	})
 
