@@ -7,6 +7,12 @@ exec('npm install');
 
 console.log("Dependencies installed!");
 
+console.log('Transpiling...')
+
+exec('rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files')
+
+console.log('Files transpiled succesfully!');
+
 console.log("Installing Jenny...");
 
 if (os.type() === 'Windows_NT') {
