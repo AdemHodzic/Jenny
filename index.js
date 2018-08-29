@@ -31,6 +31,4 @@ fetch(api)
 		console.log("Error: ", error)
 	})
 
-
-
 clear()
