@@ -11,12 +11,7 @@ clear()
 
 fetch(api)
 	.then(data => data.json())
-	.then(data => {
-		const arr = data.quotes
-		const max = arr.length
-		const index = Math.floor(Math.random() * max)
-		return arr[index]
-	})
+	.then(data =>  data.quotes[Math.floor(Math.random() * data.quotes.length)])
 	.then(data => {
 		data = data.content
 		console.log(
@@ -30,5 +25,3 @@ fetch(api)
 		console.log("We are sorry. There seems to be a problem with our service!")
 		console.log("Error: ", error)
 	})
-
-clear()
